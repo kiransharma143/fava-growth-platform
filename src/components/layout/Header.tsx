@@ -3,23 +3,28 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Approach", path: "/approach" },
-    { name: "Projects", path: "/projects" },
-    { name: "Team", path: "/team" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", id: "home" },
+    { name: "About Us", id: "about" },
+    { name: "Services", id: "services" },
+    { name: "Approach", id: "approach" },
+    { name: "Projects", id: "projects" },
+    { name: "Team", id: "team" },
+    { name: "Contact", id: "contact" },
   ];
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -35,19 +40,20 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                className={`font-medium transition-colors hover:text-blue-600 ${
-                  isActive(item.path) ? "text-blue-600" : "text-gray-600"
-                }`}
+                onClick={() => scrollToSection(item.id)}
+                className="font-medium transition-colors hover:text-blue-600 text-gray-600"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </nav>
 
-          <Button className="hidden md:block bg-orange-500 hover:bg-orange-600">
+          <Button 
+            className="hidden md:block bg-orange-500 hover:bg-orange-600"
+            onClick={() => scrollToSection('contact')}
+          >
             Get Started
           </Button>
 
@@ -61,18 +67,18 @@ const Header = () => {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-6">
                 {navItems.map((item) => (
-                  <Link
+                  <button
                     key={item.name}
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`font-medium text-lg transition-colors hover:text-blue-600 ${
-                      isActive(item.path) ? "text-blue-600" : "text-gray-600"
-                    }`}
+                    onClick={() => scrollToSection(item.id)}
+                    className="font-medium text-lg transition-colors hover:text-blue-600 text-gray-600 text-left"
                   >
                     {item.name}
-                  </Link>
+                  </button>
                 ))}
-                <Button className="w-full mt-6 bg-orange-500 hover:bg-orange-600">
+                <Button 
+                  className="w-full mt-6 bg-orange-500 hover:bg-orange-600"
+                  onClick={() => scrollToSection('contact')}
+                >
                   Get Started
                 </Button>
               </nav>
