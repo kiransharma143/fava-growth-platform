@@ -1,10 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { Textarea } from "@/components/ui/textarea";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { useState } from "react";
 
 const Home = () => {
@@ -108,6 +108,30 @@ const Home = () => {
     }
   ];
 
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      company: "Sea Buck Essence",
+      rating: 5,
+      text: "FAVA Group transformed our distribution network completely. Their end-to-end approach helped us achieve 300% growth in market penetration within just 18 months.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Priya Sharma",
+      company: "Mr. Munchido",
+      rating: 5,
+      text: "The strategic planning and execution by FAVA Group exceeded our expectations. Their expertise in FMCG distribution is unmatched in the industry.",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b2e47494?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Amit Patel",
+      company: "Regional Distributor",
+      rating: 5,
+      text: "Working with FAVA Group has been a game-changer for our business. Their comprehensive solutions and professional approach delivered results beyond our projections.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+    }
+  ];
+
   const teamMembers = [
     {
       name: "Mr. APS Ahluwalia",
@@ -161,21 +185,21 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section id="home" className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
               Nurturing the Seeds
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-fade-in" style={{animationDelay: '0.2s'}}>
               Over four decades of excellence in FMCG, Warehousing, Finance, Manpower, Export, and Distribution
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8" onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 transform hover:scale-105 transition-all duration-300" onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}>
                 Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 transform hover:scale-105 transition-all duration-300" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
                 Partner with Us
               </Button>
             </div>
@@ -187,18 +211,18 @@ const Home = () => {
       <section id="about" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">About FAVA Group</h2>
-            <p className="text-xl text-gray-600">Four decades of excellence in business solutions and strategic partnerships</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">About FAVA Group</h2>
+            <p className="text-xl text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>Four decades of excellence in business solutions and strategic partnerships</p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
               <h3 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h3>
               <p className="text-lg text-gray-600 mb-6">
                 FAVA Group is a growing enterprise with over four decades of experience in sectors like FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-3 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
@@ -207,7 +231,7 @@ const Home = () => {
                     <p className="text-gray-600">To develop Fava Glocal as a leading solution provider to the FMCG space.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-3 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
@@ -218,11 +242,11 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
               <img 
                 src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=600&h=500&fit=crop" 
                 alt="Modern business building" 
-                className="w-full h-96 object-cover rounded-lg shadow-lg"
+                className="w-full h-96 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -230,12 +254,12 @@ const Home = () => {
           {/* Value Proposition */}
           <div className="mt-16">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Our Value Proposition</h3>
-              <p className="text-lg text-gray-600">We deliver comprehensive business solutions through strategic partnerships and innovative approaches</p>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4 animate-fade-in">Our Value Proposition</h3>
+              <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>We deliver comprehensive business solutions through strategic partnerships and innovative approaches</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map((value, index) => (
-                <Card key={index} className="h-full hover:shadow-lg transition-shadow">
+                <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
                   <CardHeader>
                     <CardTitle className="text-lg">{value.title}</CardTitle>
                   </CardHeader>
@@ -255,40 +279,85 @@ const Home = () => {
       <section id="services" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">
               Comprehensive Digital Solutions Tailored For Your Success
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.1s'}}>
               Our end-to-end business development services help startups and emerging brands achieve sustainable growth through strategic partnerships and innovative solutions.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mainServices.map((service, index) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-              />
+              <div key={index} className="animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
+                <ServiceCard
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Approach Section */}
-      <section id="approach" className="py-16 bg-white">
+      {/* Testimonials Slider Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Approach</h2>
-            <p className="text-lg text-gray-600">Strategic execution models designed for sustainable growth</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">What Our Clients Say</h2>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>Trusted by industry leaders for exceptional results</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="mx-2 transform hover:scale-105 transition-transform duration-300">
+                      <CardContent className="p-8 text-center">
+                        <div className="flex justify-center mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <p className="text-lg text-gray-600 mb-6 italic">"{testimonial.text}"</p>
+                        <div className="flex items-center justify-center space-x-4">
+                          <img 
+                            src={testimonial.image} 
+                            alt={testimonial.name}
+                            className="w-16 h-16 rounded-full object-cover"
+                          />
+                          <div>
+                            <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                            <p className="text-sm text-gray-500">{testimonial.company}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0" />
+              <CarouselNext className="right-0" />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach Section */}
+      <section id="approach" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Our Approach</h2>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>Strategic execution models designed for sustainable growth</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
               <h3 className="text-3xl font-bold text-gray-800 mb-6">Why Choose Our Services?</h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
@@ -297,7 +366,7 @@ const Home = () => {
                     <p className="text-gray-600">Complete business solutions under one roof, eliminating the need for multiple vendors.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
@@ -306,7 +375,7 @@ const Home = () => {
                     <p className="text-gray-600">Proven track record with decades of industry expertise across multiple sectors.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
@@ -317,11 +386,11 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
               <img 
                 src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&h=500&fit=crop" 
                 alt="Business innovation" 
-                className="w-full h-96 object-cover rounded-lg shadow-lg"
+                className="w-full h-96 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -329,21 +398,21 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 bg-gray-50">
+      <section id="projects" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Trusted Partnerships & Success Stories</h2>
-            <p className="text-lg text-gray-600">We've helped numerous brands achieve their business objectives through our comprehensive solutions</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Trusted Partnerships & Success Stories</h2>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>We've helped numerous brands achieve their business objectives through our comprehensive solutions</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {keyPartnerships.map((project, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow overflow-hidden">
+              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 overflow-hidden animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <CardHeader>
@@ -379,24 +448,24 @@ const Home = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-16 bg-white">
+      <section id="team" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Meet Our Team</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.1s'}}>
               Meet the experienced professionals who lead our organization with vision, expertise, and dedication
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow text-center">
+              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
                 <CardHeader>
                   <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
@@ -416,7 +485,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gray-50">
+      <section id="contact" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
@@ -543,13 +612,13 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 animate-fade-in">
             Ready To Embark On Your Digital Journey?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-blue-100 animate-fade-in" style={{animationDelay: '0.1s'}}>
             Let's Get Started.
           </p>
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 px-8" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
+          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 px-8 transform hover:scale-105 transition-all duration-300 animate-fade-in" style={{animationDelay: '0.2s'}} onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
             Contact Us Today
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
