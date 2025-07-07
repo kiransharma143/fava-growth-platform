@@ -8,11 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <img 
-                src="/lovable-uploads/c17ec66a-b7cd-42a9-b290-e961ed7406d5.png" 
-                alt="FAVA Glocal Logo" 
-                className="h-10 w-auto"
-              />
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">F</span>
+              </div>
+              <span className="text-2xl font-bold">FAVA Group</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Nurturing the Seeds - A growing enterprise with over four decades of experience in FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing.

@@ -31,11 +31,10 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/c17ec66a-b7cd-42a9-b290-e961ed7406d5.png" 
-              alt="FAVA Glocal Logo" 
-              className="h-12 w-auto"
-            />
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">F</span>
+            </div>
+            <span className="text-2xl font-bold text-gray-800">FAVA Group</span>
           </Link>
 
           {/* Desktop Navigation */}
