@@ -4,7 +4,7 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import { Textarea } from "@/components/ui/textarea";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, ArrowUp, ArrowDown, ArrowLeftRight } from "lucide-react";
 import { useState } from "react";
 
 const Home = () => {
@@ -225,6 +225,37 @@ const Home = () => {
     }
   ];
 
+  const channelCoverage = [
+    {
+      title: "GT",
+      subtitle: "General Trade",
+      description: "Traditional retail channels with extensive reach across urban and rural markets",
+      color: "bg-gradient-to-br from-pink-400 to-pink-500",
+      textColor: "text-white"
+    },
+    {
+      title: "MTF",
+      subtitle: "Modern Trade Format",
+      description: "Organized retail chains, supermarkets, and hypermarkets for premium reach",
+      color: "bg-gradient-to-br from-green-400 to-green-500",
+      textColor: "text-gray-800"
+    },
+    {
+      title: "E-Commerce & Quick Commerce",
+      subtitle: "Digital Platforms",
+      description: "Online marketplaces and quick delivery platforms for modern consumers",
+      color: "bg-gradient-to-br from-purple-400 to-purple-500",
+      textColor: "text-white"
+    },
+    {
+      title: "Food Service & Institutions",
+      subtitle: "B2B Solutions",
+      description: "Hotels, restaurants, cafes, and institutional buyers for bulk solutions",
+      color: "bg-gradient-to-br from-blue-400 to-blue-500",
+      textColor: "text-white"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -313,6 +344,81 @@ const Home = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Channel Wise Coverage Section */}
+      <section className="py-16 bg-gradient-to-br from-teal-600 to-teal-700">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4 animate-fade-in">Channel Wise Coverage</h2>
+            <p className="text-lg text-teal-100 animate-fade-in" style={{animationDelay: '0.1s'}}>
+              Comprehensive market penetration across all major distribution channels
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              {/* Central FMCG Hub */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block">
+                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-xl animate-fade-in" style={{animationDelay: '0.3s'}}>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-teal-600">FMCG</div>
+                    <div className="text-sm text-gray-600">Coverage</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Directional Arrows */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
+                <ArrowUp className="absolute -top-20 left-1/2 transform -translate-x-1/2 text-white w-8 h-8 animate-fade-in" style={{animationDelay: '0.4s'}} />
+                <ArrowDown className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-white w-8 h-8 animate-fade-in" style={{animationDelay: '0.4s'}} />
+                <ArrowLeftRight className="absolute top-1/2 -left-20 transform -translate-y-1/2 text-white w-8 h-8 animate-fade-in" style={{animationDelay: '0.4s'}} />
+                <ArrowLeftRight className="absolute top-1/2 -right-20 transform -translate-y-1/2 text-white w-8 h-8 animate-fade-in" style={{animationDelay: '0.4s'}} />
+              </div>
+
+              {/* Channel Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                {channelCoverage.map((channel, index) => (
+                  <Card key={index} className={`h-full ${channel.color} border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in overflow-hidden`} style={{animationDelay: `${0.1 * index}s`}}>
+                    <CardHeader className="pb-4">
+                      <CardTitle className={`text-2xl font-bold ${channel.textColor} mb-2`}>
+                        {channel.title}
+                      </CardTitle>
+                      <CardDescription className={`text-sm font-medium ${channel.textColor} opacity-90`}>
+                        {channel.subtitle}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className={`${channel.textColor} opacity-95 leading-relaxed`}>
+                        {channel.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Coverage Stats */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.6s'}}>
+                <div className="text-3xl font-bold text-white mb-2">500+</div>
+                <div className="text-teal-100">GT Outlets</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.7s'}}>
+                <div className="text-3xl font-bold text-white mb-2">50+</div>
+                <div className="text-teal-100">Modern Trade Stores</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
+                <div className="text-3xl font-bold text-white mb-2">10+</div>
+                <div className="text-teal-100">E-commerce Platforms</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.9s'}}>
+                <div className="text-3xl font-bold text-white mb-2">100+</div>
+                <div className="text-teal-100">Institutional Clients</div>
+              </div>
             </div>
           </div>
         </div>
