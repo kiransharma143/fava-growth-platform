@@ -182,6 +182,49 @@ const Home = () => {
     }
   ];
 
+  const businessAssociates = [
+    {
+      name: "Ming's Magic",
+      logo: "/lovable-uploads/03bd0a0f-9291-42cf-be2f-63737d95df20.png",
+      description: "Adding CHI to Your Chinese Cuisine"
+    },
+    {
+      name: "Food Philosophy",
+      logo: "/lovable-uploads/7d4feae1-c467-4275-a37b-d2e8dfd1a54a.png",
+      description: "Innovative Food Solutions"
+    },
+    {
+      name: "UMA Global Foods",
+      logo: "/lovable-uploads/990d9879-3687-4b37-b253-87b31382b8cb.png",
+      description: "Premium Food Products"
+    },
+    {
+      name: "K17",
+      logo: "/lovable-uploads/9b4284ba-1b33-429b-be90-51f007a4b5cb.png",
+      description: "The Master of Taste"
+    },
+    {
+      name: "Royal King",
+      logo: "/lovable-uploads/856d6cc7-8575-4050-9dfd-7da51dd17996.png",
+      description: "Extra Long Grain Sella Basmati Rice"
+    },
+    {
+      name: "Jasmer",
+      logo: "/lovable-uploads/f666123c-da36-4f37-9aa4-95595164ab18.png",
+      description: "Evolving Responsibly"
+    },
+    {
+      name: "Bonn & Americana",
+      logo: "/lovable-uploads/849c781d-195e-4d36-8bbe-6ddfd59bacf1.png",
+      description: "Trusted Food Brands"
+    },
+    {
+      name: "Annapurna & Captain Cook",
+      logo: "/lovable-uploads/d7014acd-a945-4269-aaa7-d5728fb5e4f5.png",
+      description: "Trusted Pantry Partner & Culinary Adventurer"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -301,8 +344,46 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Slider Section */}
+      {/* Business Associates Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Our Business Associates</h2>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>
+              Proud partners working together to deliver excellence in the FMCG industry
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {businessAssociates.map((associate, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in border-0 shadow-md" style={{animationDelay: `${0.1 * index}s`}}>
+                      <CardContent className="p-6 text-center">
+                        <div className="h-32 flex items-center justify-center mb-4 bg-gray-50 rounded-lg overflow-hidden">
+                          <img 
+                            src={associate.logo} 
+                            alt={associate.name}
+                            className="max-h-28 max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <h3 className="font-semibold text-gray-800 mb-2">{associate.name}</h3>
+                        <p className="text-sm text-gray-600">{associate.description}</p>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0" />
+              <CarouselNext className="right-0" />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Slider Section */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">What Our Clients Say</h2>
@@ -346,7 +427,7 @@ const Home = () => {
       </section>
 
       {/* Approach Section */}
-      <section id="approach" className="py-16 bg-gray-50">
+      <section id="approach" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Our Approach</h2>
@@ -398,7 +479,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 bg-white">
+      <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Trusted Partnerships & Success Stories</h2>
@@ -448,7 +529,7 @@ const Home = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-16 bg-gray-50">
+      <section id="team" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Meet Our Team</h2>
