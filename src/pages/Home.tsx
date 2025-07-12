@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Home = () => {
   const { toast } = useToast();
@@ -14,18 +14,6 @@ const Home = () => {
     email: "",
     message: ""
   });
-
-  // Auto-scroll to Business Associates section
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const businessAssociatesSection = document.getElementById('business-associates');
-      if (businessAssociatesSection) {
-        businessAssociatesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }, 3000); // Auto scroll after 3 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -263,7 +251,7 @@ const Home = () => {
                 Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 transform hover:scale-105 transition-all duration-300" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-orange-500 hover:text-white hover:border-orange-500 px-8 transform hover:scale-105 transition-all duration-300" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
                 Partner with Us
               </Button>
             </div>
@@ -339,10 +327,10 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
+              <div className="animate-scale-in" style={{animationDelay: '0.4s'}}>
                 <img 
-                  src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=600&h=500&fit=crop" 
-                  alt="Modern business building" 
+                  src="/lovable-uploads/83f1166d-cff5-4dca-a049-14ae5e7d4ed4.png" 
+                  alt="Business collaboration and strategy planning" 
                   className="w-full h-96 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
