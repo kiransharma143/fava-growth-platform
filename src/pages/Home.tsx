@@ -256,6 +256,34 @@ const Home = () => {
     }
   ];
 
+  const warehouseImages = [
+    {
+      src: "/lovable-uploads/cafabd12-e589-441a-aa7c-7e4349f95840.png",
+      alt: "Modern office workspace with team collaboration",
+      title: "Collaborative Workspace"
+    },
+    {
+      src: "/lovable-uploads/7f0c1b30-a01b-4130-be1d-b66b1b5d62aa.png",
+      alt: "Warehouse product shelving with FMCG products",
+      title: "Product Storage & Organization"
+    },
+    {
+      src: "/lovable-uploads/9338f6ca-7da6-4355-a25c-06d2a6188447.png",
+      alt: "Organized warehouse inventory with food products",
+      title: "Inventory Management"
+    },
+    {
+      src: "/lovable-uploads/097fad37-7bb1-4a0f-868b-a8f1cbaca545.png",
+      alt: "Professional meeting room setup",
+      title: "Business Meeting Facilities"
+    },
+    {
+      src: "/lovable-uploads/49494ae4-1768-4a86-8b8d-64d918f432f9.png",
+      alt: "Executive office with product displays",
+      title: "Executive Operations Center"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -426,6 +454,60 @@ const Home = () => {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Warehouse & Facilities Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Our Warehouse & Facilities</h2>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>
+              State-of-the-art facilities equipped for modern FMCG operations and business excellence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {warehouseImages.map((image, index) => (
+              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 overflow-hidden animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-lg">{image.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600">
+                    {image.alt}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Facility Features */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
+              <div className="text-3xl font-bold text-gray-800 mb-2">15,000 sq ft</div>
+              <div className="text-gray-600">Warehouse Space</div>
+            </div>
+            <div className="text-center animate-fade-in" style={{animationDelay: '0.9s'}}>
+              <div className="text-3xl font-bold text-gray-800 mb-2">Climate</div>
+              <div className="text-gray-600">Controlled Storage</div>
+            </div>
+            <div className="text-center animate-fade-in" style={{animationDelay: '1.0s'}}>
+              <div className="text-3xl font-bold text-gray-800 mb-2">24/7</div>
+              <div className="text-gray-600">Security & Monitoring</div>
+            </div>
+            <div className="text-center animate-fade-in" style={{animationDelay: '1.1s'}}>
+              <div className="text-3xl font-bold text-gray-800 mb-2">Strategic</div>
+              <div className="text-gray-600">Location Access</div>
+            </div>
           </div>
         </div>
       </section>
