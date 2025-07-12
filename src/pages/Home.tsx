@@ -4,8 +4,8 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import { Textarea } from "@/components/ui/textarea";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Star } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const { toast } = useToast();
@@ -14,6 +14,18 @@ const Home = () => {
     email: "",
     message: ""
   });
+
+  // Auto-scroll to Business Associates section
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const businessAssociatesSection = document.getElementById('business-associates');
+      if (businessAssociatesSection) {
+        businessAssociatesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 3000); // Auto scroll after 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,30 +93,6 @@ const Home = () => {
       title: "Logistic & Warehousing Support",
       description: "Complete logistics solutions with state-of-the-art warehousing facilities in strategic locations for efficient supply chain management.",
       icon: <span className="text-white text-xl">📦</span>
-    }
-  ];
-
-  const keyPartnerships = [
-    {
-      title: "Sea Buck Essence Cosmetics",
-      category: "Beauty & Cosmetics",
-      description: "Complete distribution channel setup and brand positioning strategy for premium cosmetics line",
-      services: ["Distribution Setup", "Brand Positioning", "Market Penetration"],
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&h=200&fit=crop"
-    },
-    {
-      title: "Mr. Munchido",
-      category: "Food & Beverage",
-      description: "End-to-end market penetration and retail channel development for snack food brand",
-      services: ["Market Penetration", "Retail Channel Development", "Brand Building"],
-      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=400&h=200&fit=crop"
-    },
-    {
-      title: "HPCL Partnership",
-      category: "Audit Systems",
-      description: "Strategic audit system implementation and process optimization",
-      services: ["System Implementation", "Process Optimization", "Compliance Management"],
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=200&fit=crop"
     }
   ];
 
@@ -295,7 +283,7 @@ const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
                 <div className="space-y-6">
-                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                  <div className="transform hover:translate-x-2 transition-transform duration-300 animate-fade-in" style={{animationDelay: '0.3s'}}>
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-white text-sm">◊</span>
@@ -306,7 +294,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                  <div className="transform hover:translate-x-2 transition-transform duration-300 animate-fade-in" style={{animationDelay: '0.5s'}}>
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-white text-sm">◊</span>
@@ -317,7 +305,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                  <div className="transform hover:translate-x-2 transition-transform duration-300 animate-fade-in" style={{animationDelay: '0.7s'}}>
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-white text-sm">◊</span>
@@ -328,7 +316,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                  <div className="transform hover:translate-x-2 transition-transform duration-300 animate-fade-in" style={{animationDelay: '0.9s'}}>
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-white text-sm">◊</span>
@@ -339,7 +327,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                  <div className="transform hover:translate-x-2 transition-transform duration-300 animate-fade-in" style={{animationDelay: '1.1s'}}>
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-white text-sm">◊</span>
@@ -367,15 +355,15 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Vision & Mission</h2>
-            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-scale-in">Vision & Mission</h2>
+            <p className="text-lg text-gray-600 animate-scale-in" style={{animationDelay: '0.1s'}}>
               "Nurturing the Seeds"
             </p>
           </div>
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision Box */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl shadow-xl animate-fade-in transform hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
+            <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl shadow-xl animate-scale-in transform hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-white bg-opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white bg-opacity-10 rounded-full translate-y-12 -translate-x-12"></div>
               <div className="relative p-8">
@@ -399,7 +387,7 @@ const Home = () => {
             </div>
 
             {/* Mission Box */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-2xl shadow-xl animate-fade-in transform hover:scale-105 transition-all duration-500" style={{animationDelay: '0.4s'}}>
+            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-2xl shadow-xl animate-scale-in transform hover:scale-105 transition-all duration-500" style={{animationDelay: '0.4s'}}>
               <div className="absolute top-0 left-0 w-28 h-28 bg-white bg-opacity-10 rounded-full -translate-y-14 -translate-x-14"></div>
               <div className="absolute bottom-0 right-0 w-20 h-20 bg-white bg-opacity-10 rounded-full translate-y-10 translate-x-10"></div>
               <div className="relative p-8">
@@ -445,7 +433,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
+              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in" style={{animationDelay: `${0.2 + 0.1 * index}s`}}>
                 <CardHeader>
                   <CardTitle className="text-lg">{value.title}</CardTitle>
                 </CardHeader>
@@ -474,7 +462,7 @@ const Home = () => {
             {/* Channel Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {channelCoverage.map((channel, index) => (
-                <Card key={index} className={`h-full ${channel.color} border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in overflow-hidden`} style={{animationDelay: `${0.1 * index}s`}}>
+                <Card key={index} className={`h-full ${channel.color} border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-scale-in overflow-hidden`} style={{animationDelay: `${0.3 + 0.1 * index}s`}}>
                   <CardHeader className="pb-4">
                     <CardTitle className={`text-2xl font-bold ${channel.textColor} mb-2`}>
                       {channel.title}
@@ -494,19 +482,19 @@ const Home = () => {
 
             {/* Coverage Stats */}
             <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.6s'}}>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
                 <div className="text-3xl font-bold text-gray-800 mb-2">500+</div>
                 <div className="text-gray-600">GT Outlets</div>
               </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.7s'}}>
+              <div className="text-center animate-fade-in" style={{animationDelay: '0.9s'}}>
                 <div className="text-3xl font-bold text-gray-800 mb-2">50+</div>
                 <div className="text-gray-600">Modern Trade Stores</div>
               </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
+              <div className="text-center animate-fade-in" style={{animationDelay: '1.0s'}}>
                 <div className="text-3xl font-bold text-gray-800 mb-2">10+</div>
                 <div className="text-gray-600">E-commerce Platforms</div>
               </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.9s'}}>
+              <div className="text-center animate-fade-in" style={{animationDelay: '1.1s'}}>
                 <div className="text-3xl font-bold text-gray-800 mb-2">100+</div>
                 <div className="text-gray-600">Institutional Clients</div>
               </div>
@@ -596,7 +584,7 @@ const Home = () => {
       </section>
 
       {/* Business Associates Section */}
-      <section className="py-16 bg-white">
+      <section id="business-associates" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Our Business Associates</h2>
@@ -685,58 +673,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Trusted Partnerships & Success Stories</h2>
-            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>We've helped numerous brands achieve their business objectives through our comprehensive solutions</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {keyPartnerships.map((project, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 overflow-hidden animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-lg">{project.title}</CardTitle>
-                    <span className="text-sm bg-blue-100 text-blue-600 px-2 py-1 rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 mb-4">
-                    {project.description}
-                  </CardDescription>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium text-gray-800">Services Provided:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.services.map((service, serviceIndex) => (
-                        <span 
-                          key={serviceIndex}
-                          className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full"
-                        >
-                          {service}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
-      <section id="team" className="py-16 bg-gray-50">
+      <section id="team" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Meet Our Team</h2>
@@ -779,7 +717,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
+      <section id="contact" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
