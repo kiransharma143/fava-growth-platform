@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -108,54 +109,18 @@ const Home = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      company: "Sea Buck Essence",
-      rating: 5,
-      text: "FAVA Group transformed our distribution network completely. Their end-to-end approach helped us achieve 300% growth in market penetration within just 18 months.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      name: "Priya Sharma",
-      company: "Mr. Munchido",
-      rating: 5,
-      text: "The strategic planning and execution by FAVA Group exceeded our expectations. Their expertise in FMCG distribution is unmatched in the industry.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b2e47494?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      name: "Amit Patel",
-      company: "Regional Distributor",
-      rating: 5,
-      text: "Working with FAVA Group has been a game-changer for our business. Their comprehensive solutions and professional approach delivered results beyond our projections.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-    }
-  ];
-
   const teamMembers = [
     {
       name: "Mr. APS Ahluwalia",
       position: "Business Strategy & Operations",
       description: "Leading strategic business operations with decades of industry experience in FMCG and distribution management.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+      image: "/lovable-uploads/d69cc0d2-fe5d-41e3-b850-240b87e50459.png"
     },
     {
-      name: "Mrs. Rekha Suthar",
-      position: "Finance Controller",
-      description: "Expert in financial management and control systems, ensuring operational efficiency and strategic financial planning.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b2e47494?w=300&h=300&fit=crop&crop=face"
-    },
-    {
-      name: "Ms. Priyaa Sindher",
-      position: "Head, HR & Admin",
-      description: "Driving human resource strategies and administrative excellence to support organizational growth and development.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face"
-    },
-    {
-      name: "Mr. Vibhor Kala",
-      position: "CA & IT Head",
-      description: "Leading financial compliance and technology initiatives to drive digital transformation and operational efficiency.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
+      name: "Mr. Santosh Rane",
+      position: "Operations Director",
+      description: "Expert in operational excellence and strategic planning, driving organizational growth and business development.",
+      image: "/lovable-uploads/05549fb8-c37d-40ac-ac04-7ffea9117e85.png"
     }
   ];
 
@@ -222,6 +187,16 @@ const Home = () => {
       name: "Annapurna & Captain Cook",
       logo: "/lovable-uploads/d7014acd-a945-4269-aaa7-d5728fb5e4f5.png",
       description: "Trusted Pantry Partner & Culinary Adventurer"
+    },
+    {
+      name: "Mr. Munchido",
+      logo: "/lovable-uploads/0d48fe80-84da-407a-96a9-702d48e245e5.png",
+      description: "Munching all around"
+    },
+    {
+      name: "MASALA Products",
+      logo: "/lovable-uploads/3f85f986-a0b2-4726-b81f-8da6e067f4d9.png",
+      description: "Premium Spice Collection"
     }
   ];
 
@@ -323,26 +298,6 @@ const Home = () => {
               <p className="text-lg text-gray-600 mb-6">
                 FAVA Group is a growing enterprise with over four decades of experience in sectors like FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3 transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Our Vision</h4>
-                    <p className="text-gray-600">To develop Fava Glocal as a leading solution provider to the FMCG space.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3 transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Our Mission</h4>
-                    <p className="text-gray-600">Lending a hand to start-ups and emerging brands by providing END-TO-END business solutions under one roof.</p>
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
               <img 
@@ -352,27 +307,102 @@ const Home = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Value Proposition */}
-          <div className="mt-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4 animate-fade-in">Our Value Proposition</h3>
-              <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>We deliver comprehensive business solutions through strategic partnerships and innovative approaches</p>
+      {/* Vision & Mission Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Vision & Mission</h2>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>
+              "Nurturing the Seeds"
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-8">
+            {/* Vision Section */}
+            <div className="relative overflow-hidden bg-white rounded-xl shadow-lg animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-blue-600"></div>
+              <div className="p-8 pl-12">
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold transform hover:scale-110 transition-transform duration-300">
+                      01
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                      <span className="mr-3">🎯</span>
+                      VISION
+                    </h3>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      "To Develop Fava Glocal as leading Solution Providing Organization to the FMCG Space largely Process food, commodities & non-food sectors"
+                    </p>
+                    <p className="text-md text-gray-600 mt-3 italic">
+                      "Lending a hand to Start ups and Emerging brands a delightful experience by providing END to END solution under one roof towards Key business aspects such as Channel wise Presence, Distribution network, sustainable revenues, marketing/ branding, SCM & most important Skillful field force"
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {values.map((value, index) => (
-                <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-gray-600">
-                      {value.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
+
+            {/* Mission Section */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-xl shadow-lg animate-fade-in" style={{animationDelay: '0.4s'}}>
+              <div className="p-8">
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white text-2xl font-bold transform hover:scale-110 transition-transform duration-300">
+                      02
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-4 flex items-center">
+                      <span className="mr-3">🚀</span>
+                      MISSION
+                    </h3>
+                    <p className="text-lg mb-4 font-medium">
+                      Achieved through
+                    </p>
+                    <div className="space-y-3 text-teal-100">
+                      <p>• Providing hassle free operation, Channel wise strong Presence data analysis</p>
+                      <p>• Actionable MIS, Sustainable network, Skillful Field force, Innovative distribution</p>
+                      <p>• Models and scaling the business within time frame across Indian Markets</p>
+                    </div>
+                    <div className="mt-6 p-4 bg-white bg-opacity-10 rounded-lg">
+                      <p className="font-medium text-lg mb-2">By offering</p>
+                      <p className="text-teal-100">Cost Efficient, ROI Efficient, Scalable Efficient with agility</p>
+                      <p className="font-medium text-lg mt-3 mb-2">In a</p>
+                      <p className="text-teal-100">Knowledge-driven, entrepreneurial & fun work environment</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4 animate-fade-in">Our Value Proposition</h3>
+            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>We deliver comprehensive business solutions through strategic partnerships and innovative approaches</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((value, index) => (
+              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
+                <CardHeader>
+                  <CardTitle className="text-lg">{value.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600">
+                    {value.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -550,52 +580,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Slider Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">What Our Clients Say</h2>
-            <p className="text-lg text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>Trusted by industry leaders for exceptional results</p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index}>
-                    <Card className="mx-2 transform hover:scale-105 transition-transform duration-300">
-                      <CardContent className="p-8 text-center">
-                        <div className="flex justify-center mb-4">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <p className="text-lg text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                        <div className="flex items-center justify-center space-x-4">
-                          <img 
-                            src={testimonial.image} 
-                            alt={testimonial.name}
-                            className="w-16 h-16 rounded-full object-cover"
-                          />
-                          <div>
-                            <p className="font-semibold text-gray-800">{testimonial.name}</p>
-                            <p className="text-sm text-gray-500">{testimonial.company}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-0" />
-              <CarouselNext className="right-0" />
-            </Carousel>
-          </div>
-        </div>
-      </section>
-
       {/* Approach Section */}
-      <section id="approach" className="py-16 bg-white">
+      <section id="approach" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Our Approach</h2>
@@ -647,7 +633,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 bg-gray-50">
+      <section id="projects" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Trusted Partnerships & Success Stories</h2>
@@ -697,7 +683,7 @@ const Home = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-16 bg-white">
+      <section id="team" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Meet Our Team</h2>
@@ -706,29 +692,34 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
-                <CardHeader>
-                  <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
-                    />
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {teamMembers.map((member, index) => (
+                <Card key={index} className="h-full hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 text-center animate-fade-in bg-white overflow-hidden group" style={{animationDelay: `${0.2 * index}s`}}>
+                  <div className="relative overflow-hidden">
+                    <div className="w-full h-80 overflow-hidden">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-blue-600 font-medium">
-                    {member.position}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">
-                    {member.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-2xl text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{member.name}</CardTitle>
+                    <CardDescription className="text-blue-600 font-semibold text-lg">
+                      {member.position}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="px-6 pb-6">
+                    <p className="text-gray-600 leading-relaxed">
+                      {member.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
