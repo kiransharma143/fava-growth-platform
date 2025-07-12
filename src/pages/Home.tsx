@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -288,23 +287,77 @@ const Home = () => {
       <section id="about" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">About FAVA Group</h2>
-            <p className="text-xl text-gray-600 animate-fade-in" style={{animationDelay: '0.1s'}}>Four decades of excellence in business solutions and strategic partnerships</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in">ABOUT US</h2>
+            <p className="text-xl text-teal-600 font-semibold animate-fade-in" style={{animationDelay: '0.1s'}}>GET TO KNOW US BETTER</p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <h3 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                FAVA Group is a growing enterprise with over four decades of experience in sectors like FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing.
-              </p>
-            </div>
-            <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
-              <img 
-                src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=600&h=500&fit=crop" 
-                alt="Modern business building" 
-                className="w-full h-96 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500"
-              />
+          <div className="max-w-6xl mx-auto space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="space-y-6">
+                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-sm">◊</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        <span className="font-semibold text-teal-600">Fava Group</span> is a growing enterprise that has <span className="font-semibold">comprehensive experience more than 4 decade</span> to Sectors such as <span className="text-teal-600 font-medium">FMCG, Finance, Export, Warehousing, Distribution, Manpower and Marketing</span> underscoring its depth of knowledge and proficiency and envisaging the vision of <span className="font-semibold">"Nurturing the Seeds"</span>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-sm">◊</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        Fava's innovative methodology of <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">"Business Development as a Service"</span> solution effectively addresses the complexities of <span className="font-semibold">sales and revenue generation</span> along with other major market challenges faced by start-ups, <span className="font-semibold">geographical expansions, scaling the business</span> in a distinctive manner.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-sm">◊</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        Fava's team of <span className="font-semibold">sales strategists and operational experts</span> located across West- North & South Zones of India possess a deep understanding geographies and cultures with and are unwaveringly dedicated to fostering your business growth.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-sm">◊</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        Fava group offers to <span className="font-semibold">develops most extensive and comprehensive distribution network for FMCG businesses</span>. Our multi-brand organizational structure is highly relevant and attractive to channel partners.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="transform hover:translate-x-2 transition-transform duration-300">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-sm">◊</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        We provide our clients with India's <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded font-medium">"Plug-N-Play"</span> Long term <span className="font-semibold">sustainable infrastructure as END to END Business Solutions under One Roof</span> with regard to <span className="font-semibold">DB network, Team, SCM Business analysis with effective Dash Boards</span>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <img 
+                  src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=600&h=500&fit=crop" 
+                  alt="Modern business building" 
+                  className="w-full h-96 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -320,26 +373,24 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto space-y-8">
-            {/* Vision Section */}
-            <div className="relative overflow-hidden bg-white rounded-xl shadow-lg animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-blue-600"></div>
-              <div className="p-8 pl-12">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold transform hover:scale-110 transition-transform duration-300">
-                      01
-                    </div>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Vision Box */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl shadow-xl animate-fade-in transform hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white bg-opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white bg-opacity-10 rounded-full translate-y-12 -translate-x-12"></div>
+              <div className="relative p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-2xl">🎯</span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                      <span className="mr-3">🎯</span>
-                      VISION
-                    </h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      "To Develop Fava Glocal as leading Solution Providing Organization to the FMCG Space largely Process food, commodities & non-food sectors"
-                    </p>
-                    <p className="text-md text-gray-600 mt-3 italic">
+                  <h3 className="text-2xl font-bold">VISION</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-lg font-medium leading-relaxed">
+                    "To Develop Fava Glocal as leading Solution Providing Organization to the FMCG Space largely Process food, commodities & non-food sectors"
+                  </p>
+                  <div className="bg-white bg-opacity-15 rounded-lg p-4">
+                    <p className="text-sm leading-relaxed italic">
                       "Lending a hand to Start ups and Emerging brands a delightful experience by providing END to END solution under one roof towards Key business aspects such as Channel wise Presence, Distribution network, sustainable revenues, marketing/ branding, SCM & most important Skillful field force"
                     </p>
                   </div>
@@ -347,34 +398,36 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Mission Section */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-xl shadow-lg animate-fade-in" style={{animationDelay: '0.4s'}}>
-              <div className="p-8">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white text-2xl font-bold transform hover:scale-110 transition-transform duration-300">
-                      02
+            {/* Mission Box */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-2xl shadow-xl animate-fade-in transform hover:scale-105 transition-all duration-500" style={{animationDelay: '0.4s'}}>
+              <div className="absolute top-0 left-0 w-28 h-28 bg-white bg-opacity-10 rounded-full -translate-y-14 -translate-x-14"></div>
+              <div className="absolute bottom-0 right-0 w-20 h-20 bg-white bg-opacity-10 rounded-full translate-y-10 translate-x-10"></div>
+              <div className="relative p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <h3 className="text-2xl font-bold">MISSION</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-lg font-medium mb-4">Achieved through</p>
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-300 mt-1">•</span>
+                      <p>Providing hassle free operation, Channel wise strong Presence data analysis</p>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-300 mt-1">•</span>
+                      <p>Actionable MIS, Sustainable network, Skillful Field force, Innovative distribution</p>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-300 mt-1">•</span>
+                      <p>Models and scaling the business within time frame across Indian Markets</p>
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-4 flex items-center">
-                      <span className="mr-3">🚀</span>
-                      MISSION
-                    </h3>
-                    <p className="text-lg mb-4 font-medium">
-                      Achieved through
-                    </p>
-                    <div className="space-y-3 text-teal-100">
-                      <p>• Providing hassle free operation, Channel wise strong Presence data analysis</p>
-                      <p>• Actionable MIS, Sustainable network, Skillful Field force, Innovative distribution</p>
-                      <p>• Models and scaling the business within time frame across Indian Markets</p>
-                    </div>
-                    <div className="mt-6 p-4 bg-white bg-opacity-10 rounded-lg">
-                      <p className="font-medium text-lg mb-2">By offering</p>
-                      <p className="text-teal-100">Cost Efficient, ROI Efficient, Scalable Efficient with agility</p>
-                      <p className="font-medium text-lg mt-3 mb-2">In a</p>
-                      <p className="text-teal-100">Knowledge-driven, entrepreneurial & fun work environment</p>
-                    </div>
+                  <div className="bg-white bg-opacity-15 rounded-lg p-4 mt-6">
+                    <p className="font-medium text-sm mb-2">By offering: <span className="text-yellow-200">Cost Efficient, ROI Efficient, Scalable Efficient with agility</span></p>
+                    <p className="font-medium text-sm">In a: <span className="text-yellow-200">Knowledge-driven, entrepreneurial & fun work environment</span></p>
                   </div>
                 </div>
               </div>
@@ -693,27 +746,28 @@ const Home = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
                 <Card key={index} className="h-full hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 text-center animate-fade-in bg-white overflow-hidden group" style={{animationDelay: `${0.2 * index}s`}}>
                   <div className="relative overflow-hidden">
-                    <div className="w-full h-80 overflow-hidden">
+                    <div className="w-full h-64 overflow-hidden bg-gray-100">
                       <img 
                         src={member.image} 
                         alt={member.name}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-500"
+                        style={{ objectPosition: 'center 20%' }}
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-2xl text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{member.name}</CardTitle>
-                    <CardDescription className="text-blue-600 font-semibold text-lg">
+                    <CardTitle className="text-xl text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{member.name}</CardTitle>
+                    <CardDescription className="text-blue-600 font-semibold">
                       {member.position}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="px-6 pb-6">
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-sm">
                       {member.description}
                     </p>
                   </CardContent>
