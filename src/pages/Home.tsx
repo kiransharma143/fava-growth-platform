@@ -277,14 +277,66 @@ const Home = () => {
       </section>
 
       {/* About Section */}
+      <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 w-full relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[#5da0d5]/20 to-[#84c23d]/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-[#84c23d]/20 to-[#5da0d5]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-green-200/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
+        </div>
 
-      <section id="about" className="py-20 bg-white w-full relative overflow-hidden">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
-          {/* Left: Text Content */}
-          <div className="w-full md:w-1/2 px-4 md:px-0 space-y-8 text-black">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg">ABOUT US</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] rounded mb-6"></div>
-            <div className="space-y-6">
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent animate-gradient-text">
+              ABOUT US
+            </h2>
+            <div className="h-2 w-32 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] rounded-full mx-auto mb-6 shadow-lg"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Discover our journey of excellence spanning over four decades
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            {/* Left: Enhanced Image Section */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="relative group">
+                {/* Main Image Container */}
+                <div className="relative w-full max-w-lg mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#5da0d5] to-[#84c23d] rounded-3xl transform rotate-6 scale-105 opacity-20 group-hover:rotate-12 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tl from-[#84c23d] to-[#5da0d5] rounded-3xl transform -rotate-3 scale-105 opacity-20 group-hover:-rotate-6 transition-all duration-500"></div>
+                  <div className="relative bg-white rounded-3xl p-6 shadow-2xl transform hover:scale-105 transition-all duration-500">
+                    <img 
+                      src="/lovable-uploads/83f1166d-cff5-4dca-a049-14ae5e7d4ed4.png" 
+                      alt="About Fava Group" 
+                      className="w-full h-auto rounded-2xl shadow-lg"
+                    />
+                    <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-[#5da0d5] to-[#84c23d] rounded-full flex items-center justify-center shadow-lg animate-bounce-slow">
+                      <span className="text-white font-bold text-lg">40+</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Floating Statistics */}
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 animate-float1">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-[#5da0d5]">4+</div>
+                    <div className="text-sm text-gray-600">Decades</div>
+                  </div>
+                </div>
+                
+                <div className="absolute -top-6 -right-8 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 animate-float2">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-[#84c23d]">6+</div>
+                    <div className="text-sm text-gray-600">Sectors</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Enhanced Text Content */}
+            <div className="w-full lg:w-1/2 space-y-8 text-gray-800 animate-fade-in" style={{animationDelay: '0.4s'}}>
+              <div className="space-y-6">
               <p className="text-lg md:text-xl leading-relaxed">
                 Fava Group is a growing enterprise that has comprehensive experience more than <span className="font-bold text-[#5da0d5]">4 decade</span> to Sectors such as <span className="font-bold text-[#5da0d5]">FMCG, Finance, Export, Warehousing, Distribution, Manpower</span> and Marketing underscoring its depth of knowledge and proficiency and envisaging <span className="underline text-[#5da0d5]">the vision of Nurturing the Seeds</span>.
               </p>
@@ -301,45 +353,44 @@ const Home = () => {
                 We provide our clients with India’s <span className="font-bold text-[#5da0d5]">“Plug-N-Play” Long term sustainable infrastructure as END to END Business Solutions</span> under One Roof with regard to DB network, Team, SCM Business analysis with effective <span className="underline text-[#5da0d5]">Dash Boards</span>.
               </p>
             </div>
-            <button className="bg-[#5da0d5] text-white font-bold px-8 py-4 rounded-full mt-6 shadow-lg hover:bg-orange-600 transition-all duration-300">LEARN MORE</button>
-          </div>
-          {/* Right: Decorative Visual - Wave Lines */}
-          <div className="w-full md:w-1/2 flex items-center justify-center px-4 md:px-0">
-            <div className="relative w-full max-w-xl h-[260px] flex items-center justify-center">
-              {/* SVG Wave Lines Background */}
-              <svg viewBox="0 0 600 260" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0 top-0 w-full h-full">
-                <g>
-                  {[...Array(12)].map((_, i) => (
-                    <path key={i} d={`M0 ${20+i*18} Q300 ${40+i*16} 600 ${20+i*18}`} stroke="#232c7c" strokeWidth={i === 0 ? 1.5 : 1} opacity={0.08 + i*0.03} fill="none" />
-                  ))}
-                </g>
-              </svg>
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <p className="text-lg leading-relaxed">
+                    Fava Group is a growing enterprise that has comprehensive experience more than <span className="font-bold text-[#5da0d5] bg-blue-50 px-2 py-1 rounded">4 decades</span> in sectors such as <span className="font-bold text-[#84c23d] bg-green-50 px-2 py-1 rounded">FMCG, Finance, Export, Warehousing, Distribution, Manpower</span> and Marketing, underscoring its depth of knowledge and proficiency and envisaging <span className="italic text-[#5da0d5] font-semibold">the vision of Nurturing the Seeds</span>.
+                  </p>
+                </div>
+
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <p className="text-lg leading-relaxed">
+                    Fava's innovative methodology of <span className="font-bold text-[#5da0d5] bg-blue-50 px-2 py-1 rounded">"Business Development as a Service"</span> solution effectively addresses the complexities of sales and revenue generation along with other major market challenges faced by start-ups, <span className="text-[#84c23d] font-semibold">geographical expansions</span>, and <span className="text-[#84c23d] font-semibold">scaling-up businesses</span> in a distinctive manner.
+                  </p>
+                </div>
+
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <p className="text-lg leading-relaxed">
+                    Fava's team of <span className="font-bold text-[#5da0d5] bg-blue-50 px-2 py-1 rounded">sales strategists and operational experts</span> located across West, North & South Zones of India possess a deep understanding of geographies and cultures and are unwaveringly dedicated to fostering your business growth.
+                  </p>
+                </div>
+
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <p className="text-lg leading-relaxed">
+                    We provide our clients with India's <span className="font-bold text-[#84c23d] bg-green-50 px-2 py-1 rounded">"Plug-N-Play" Long term sustainable infrastructure as END to END Business Solutions</span> under One Roof with regard to distribution network, team, SCM business analysis with effective <span className="text-[#5da0d5] font-semibold">dashboards</span>.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <button className="group bg-gradient-to-r from-[#5da0d5] to-[#84c23d] text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="flex items-center justify-center gap-2">
+                    LEARN MORE
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </button>
+                <button className="bg-white text-[#5da0d5] font-bold px-8 py-4 rounded-full border-2 border-[#5da0d5] shadow-lg hover:bg-[#5da0d5] hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                  OUR JOURNEY
+                </button>
+              </div>
             </div>
-          </div>
         </div>
-        <style>{`
-          @keyframes gradient-text {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.2); }
-          }
-          .animate-gradient-text {
-            animation: gradient-text 3s ease-in-out infinite;
-          }
-          @keyframes bounce-slow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-          }
-          .animate-bounce-slow {
-            animation: bounce-slow 2.5s infinite;
-          }
-          @keyframes fade-in {
-            0% { opacity: 0; transform: translateY(16px); }
-            100% { opacity: 1; transform: none; }
-          }
-          .animate-fade-in {
-            animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
-          }
-        `}</style>
       </section>
 
       {/* Vision & Mission Section - Enhanced with Animation */}
