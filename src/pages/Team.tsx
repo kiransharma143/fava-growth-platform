@@ -1,30 +1,15 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Team = () => {
   const teamMembers = [
     {
       name: "Mr. APS Ahluwalia",
-      position: "Business Strategy & Operations",
-      description: "Leading strategic business operations with decades of industry experience in FMCG and distribution management.",
+      position: "Business Strategy, Operations & Training",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
     },
     {
-      name: "Mrs. Rekha Suthar",
-      position: "Finance Controller",
-      description: "Expert in financial management and control systems, ensuring operational efficiency and strategic financial planning.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b2e47494?w=300&h=300&fit=crop&crop=face"
-    },
-    {
-      name: "Ms. Priyaa Sindher",
-      position: "Head, HR & Admin",
-      description: "Driving human resource strategies and administrative excellence to support organizational growth and development.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face"
-    },
-    {
-      name: "Mr. Vibhor Kala",
-      position: "CA & IT Head",
-      description: "Leading financial compliance and technology initiatives to drive digital transformation and operational efficiency.",
+      name: "Mr. Santosh Rane",
+      position: "Business Development Lead",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
     }
   ];
@@ -77,39 +62,33 @@ const Team = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our Leadership Team
+              Our Core Leadership
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals who lead our organization with vision, expertise, and dedication
+              Driving strategy, operations, and business growth with expertise
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow text-center">
-                <CardHeader>
-                  <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-blue-600 font-medium">
-                    {member.position}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">
-                    {member.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-md flex flex-col items-center p-8"
+              >
+                <div className="w-32 h-32 mb-4 flex items-center justify-center rounded-full bg-white shadow">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-28 h-28 rounded-full object-cover border-4 border-white"
+                  />
+                </div>
+                <div className="text-xl font-bold text-gray-900 mb-2">{member.name}</div>
+                <div className="text-gray-700 font-normal">{member.position}</div>
+              </div>
             ))}
           </div>
         </div>
