@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -21,20 +20,20 @@ const Header = () => {
     { name: "About Us", id: "about" },
     { name: "Services", id: "services" },
     { name: "Approach", id: "approach" },
-    { name: "Projects", id: "projects" },
+   // { name: "Projects", id: "projects" },
     { name: "Team", id: "team" },
     { name: "Contact", id: "contact" },
   ];
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header style={{ backgroundColor: '#f4f4f4' }} className="shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/498f2485-19fe-4fc0-94ca-3aefe0b6e28e.png" 
+              src="/lovable-uploads/logo.png" 
               alt="FAVA Glocal"
-              className="h-12 w-auto"
+              className="h-25 w-32"
             />
           </Link>
 
@@ -52,7 +51,7 @@ const Header = () => {
           </nav>
 
           <Button 
-            className="hidden md:block bg-orange-500 hover:bg-orange-600"
+            className="hidden md:block bg-[cornflowerblue] hover:bg-blue-500"
             onClick={() => scrollToSection('contact')}
           >
             Get Started
@@ -77,7 +76,7 @@ const Header = () => {
                   </button>
                 ))}
                 <Button 
-                  className="w-full mt-6 bg-orange-500 hover:bg-orange-600"
+                  className="w-full mt-6 bg-[cornflowerblue] hover:bg-blue-500"
                   onClick={() => scrollToSection('contact')}
                 >
                   Get Started
