@@ -5,6 +5,7 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import { Textarea } from "@/components/ui/textarea";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
@@ -15,6 +16,16 @@ const Home = () => {
     email: "",
     message: ""
   });
+
+  // Scroll animation hooks for different sections
+  const aboutAnimation = useScrollAnimation({ threshold: 0.2 });
+  const visionAnimation = useScrollAnimation({ threshold: 0.2 });
+  const servicesAnimation = useScrollAnimation({ threshold: 0.2 });
+  const valueAnimation = useScrollAnimation({ threshold: 0.2 });
+  const channelAnimation = useScrollAnimation({ threshold: 0.2 });
+  const partnersAnimation = useScrollAnimation({ threshold: 0.2 });
+  const teamAnimation = useScrollAnimation({ threshold: 0.2 });
+  const contactAnimation = useScrollAnimation({ threshold: 0.2 });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -277,7 +288,13 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 w-full relative overflow-hidden">
+      <section 
+        ref={aboutAnimation.ref as React.RefObject<HTMLElement>}
+        id="about" 
+        className={`py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 w-full relative overflow-hidden transition-all duration-1000 ${
+          aboutAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[#5da0d5]/20 to-[#84c23d]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -394,7 +411,12 @@ const Home = () => {
       </section>
 
       {/* Vision & Mission Section - Enhanced with Animation */}
-      <section className="relative py-20 bg-gradient-to-br from-[#f0f7ff] via-[#f0f7ff] to-[#e3fcec] overflow-hidden">
+      <section 
+        ref={visionAnimation.ref as React.RefObject<HTMLElement>}
+        className={`relative py-20 bg-gradient-to-br from-[#f0f7ff] via-[#f0f7ff] to-[#e3fcec] overflow-hidden transition-all duration-1000 ${
+          visionAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         <div className="container mx-auto px-4 flex flex-col items-center justify-center gap-10 relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg tracking-tight text-center w-full">Vision & Mission</h2>
           <div className="flex flex-col md:flex-row gap-10 w-full max-w-5xl items-stretch justify-center">
@@ -486,7 +508,12 @@ const Home = () => {
 
 
       {/* Channel Wise Coverage Section - Enhanced */}
-      <section className="relative py-20 bg-gradient-to-br from-[#f0f7ff] via-[#e0f7fa] to-[#e3fcec] overflow-hidden">
+      <section 
+        ref={channelAnimation.ref as React.RefObject<HTMLElement>}
+        className={`relative py-20 bg-gradient-to-br from-[#f0f7ff] via-[#e0f7fa] to-[#e3fcec] overflow-hidden transition-all duration-1000 ${
+          channelAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         {/* Decorative Blobs */}
         <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#5da0d5] opacity-20 rounded-full blur-3xl z-0 animate-float2" />
         <div className="absolute -bottom-24 left-0 w-80 h-80 bg-[#84c23d] opacity-20 rounded-full blur-3xl z-0 animate-float1" />
@@ -528,7 +555,13 @@ const Home = () => {
       </section>
 
       {/* Services Section - Enhanced */}
-      <section id="services" className="relative py-20 bg-gradient-to-br from-[#e0f7fa] via-[#f0f7ff] to-[#e3fcec] overflow-hidden">
+      <section 
+        ref={servicesAnimation.ref as React.RefObject<HTMLElement>}
+        id="services" 
+        className={`relative py-20 bg-gradient-to-br from-[#e0f7fa] via-[#f0f7ff] to-[#e3fcec] overflow-hidden transition-all duration-1000 ${
+          servicesAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         {/* Decorative Blobs */}
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-[cornflowerblue] opacity-20 rounded-full blur-3xl z-0 animate-float1" />
         <div className="absolute -bottom-32 right-0 w-96 h-96 bg-[#84c23d] opacity-20 rounded-full blur-3xl z-0 animate-float2" />
@@ -660,7 +693,13 @@ const Home = () => {
       </section>
 
       {/* Business Associates Section */}
-      <section id="business-associates" className="py-16 bg-white">
+      <section 
+        ref={partnersAnimation.ref as React.RefObject<HTMLElement>}
+        id="business-associates" 
+        className={`py-16 bg-white transition-all duration-1000 ${
+          partnersAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg">Our Business Associates</h2>
@@ -783,7 +822,13 @@ const Home = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-16 bg-white">
+      <section 
+        ref={teamAnimation.ref as React.RefObject<HTMLElement>}
+        id="team" 
+        className={`py-16 bg-white transition-all duration-1000 ${
+          teamAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         <div className="container mx-auto px-4 relative z-10">
           {/* Decorative Blobs */}
           <div className="absolute -top-16 -left-16 w-40 h-40 bg-[cornflowerblue] opacity-20 rounded-full blur-2xl animate-float1 z-0" />
@@ -872,7 +917,13 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gray-50">
+      <section 
+        ref={contactAnimation.ref as React.RefObject<HTMLElement>}
+        id="contact" 
+        className={`py-16 bg-gray-50 transition-all duration-1000 ${
+          contactAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg">Contact Us</h2>
