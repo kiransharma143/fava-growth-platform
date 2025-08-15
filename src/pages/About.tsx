@@ -26,12 +26,12 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+  <div className="min-h-screen bg-white font-sans">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+  <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20 font-sans">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">About FAVA Group</h1>
+            <h1 className="text-5xl font-bold font-poppins mb-6">About FAVA Group</h1>
             <p className="text-xl text-blue-100">
               Four decades of excellence in business solutions and strategic partnerships
             </p>
@@ -44,7 +44,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              <h2 className="text-4xl font-bold font-poppins text-gray-800 mb-6">
                 Our Story
               </h2>
               <p className="text-lg text-gray-600 mb-6">
