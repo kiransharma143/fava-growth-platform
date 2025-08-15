@@ -48,12 +48,12 @@ const Team = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+  <div className="min-h-screen bg-white font-sans">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+  <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20 font-sans">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Meet Our Team</h1>
+            <h1 className="text-5xl font-bold font-poppins mb-6">Meet Our Team</h1>
             <p className="text-xl text-blue-100">
               Experienced professionals driving innovation and excellence in business solutions
             </p>
@@ -65,7 +65,7 @@ const Team = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold font-poppins text-gray-800 mb-4">
               Our Core Leadership
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -86,7 +86,7 @@ const Team = () => {
                     className="w-28 h-28 rounded-full object-cover border-4 border-white"
                   />
                 </div>
-                <div className="text-xl font-bold text-gray-900 mb-2">{member.name}</div>
+                <div className="text-xl font-bold font-poppins text-gray-900 mb-2">{member.name}</div>
                 <div className="text-gray-700 font-normal">{member.position}</div>
               </div>
             ))}
@@ -98,7 +98,7 @@ const Team = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold font-poppins text-gray-800 mb-4">
               Our Team Values
             </h2>
             <p className="text-lg text-gray-600">
@@ -110,7 +110,7 @@ const Team = () => {
             <Card className="text-center p-6">
               <CardHeader>
                 <div className="text-4xl mb-4">🤝</div>
-                <CardTitle className="text-xl">Collaboration</CardTitle>
+                <CardTitle className="text-xl font-poppins">Collaboration</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600">
