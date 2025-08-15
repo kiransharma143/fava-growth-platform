@@ -264,7 +264,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ fontFamily: 'Georgia, serif' }}>
       {/* Hero Section */} 
     <section 
       id="home" 
@@ -326,9 +326,10 @@ const Home = () => {
 
         {/* Main hero image */}
         <img
-          src="/team.jpg"
+          src="/banner_3.png"
           alt="Fava Team"
-          className="relative z-20 w-full max-w-md lg:max-w-lg object-cover rounded-3xl shadow-2xl border-4 border-white"
+          className="relative z-30 w-full max-w-lg lg:max-w-2xl object-cover rounded-3xl "
+          style={{ minHeight: 480, maxHeight: 640 }}
         />
 
       </div>
@@ -408,6 +409,15 @@ const Home = () => {
                   By offering end-to-end business solutions under one roof, <span className="text-blue-600 font-bold">Fava Group</span> empowers brands to enter, expand, and thrive in competitive markets — making us the trusted partner for sustainable growth.
                 </p>
               </div>
+            </div>
+            {/* About Us Image */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0 animate-fade-in" style={{animationDelay: '0.3s'}}>
+              <img
+                src="/aboutus.jpg"
+                alt="About Us"
+                className="w-full max-w-md lg:max-w-lg rounded-3xl shadow-2xl border-4 border-white object-cover"
+                style={{ minHeight: 320, maxHeight: 420 }}
+              />
             </div>
           </div>
         </div>
@@ -741,8 +751,8 @@ const Home = () => {
           </div>
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Card with Steps (No Animation) */}
-            <div className="relative">
-              <div className="bg-white/90 rounded-3xl shadow-2xl border-2 border-blue-100 p-10 flex flex-col gap-8 relative overflow-hidden">
+            <div className="relative h-full flex flex-col">
+              <div className="bg-white/90 rounded-3xl shadow-2xl border-2 border-blue-100 p-10 flex flex-col gap-8 relative overflow-hidden h-full min-h-[420px]">
                 {/* Decorative Blobs (static, no animation) */}
                 <div className="absolute -top-10 -left-10 w-32 h-32 bg-[cornflowerblue] opacity-20 rounded-full blur-2xl z-0" />
                 <div className="absolute -bottom-10 right-0 w-32 h-32 bg-[#84c23d] opacity-20 rounded-full blur-2xl z-0" />
@@ -778,68 +788,60 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            {/* Right: Animated Image Card */}
-            <div className="relative animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <div className="flex items-center justify-center w-full h-full min-h-[420px]">
-                <div className="w-full max-w-xl">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Digital Marketing */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.1s'}}>
-                      <div className="mb-4">{/* PointerIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m20 18-6-6h-3.8l-7-7" /><path d="M14.5 14.5 10 19l-7-7" /><path d="M19 19-3-3" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">DIGITAL MARKETING</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Online media. Social Media / Palm top devices</li>
-                        <li>Creating Festive & Event</li>
-                      </ul>
+            {/* Right: 2x2 Marketing Cards Grid, full height */}
+            <div className="h-full flex flex-col">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full min-h-[420px]">
+                {/* Digital Marketing */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M2 16l6-6 4 4 8-8" /></svg>
+                      <span className="font-bold text-lg">DIGITAL MARKETING</span>
                     </div>
-                    {/* Promotion */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.2s'}}>
-                      <div className="mb-4">{/* MegaphoneIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">PROMOTION</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Mass Media such as TV</li>
-                        <li>Outdoor, Print</li>
-                        <li>BTL Promotional Activities</li>
-                      </ul>
-                    </div>
-                    {/* Influencing */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.3s'}}>
-                      <div className="mb-4">{/* MegaphoneIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">INFLUENCING</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Effective planning with influencers & Approach to all relevant channels</li>
-                      </ul>
-                    </div>
-                    {/* PR Activities */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.4s'}}>
-                      <div className="mb-4">{/* DocumentIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><path d="M8 12h8" /><path d="M8 16h8" /><path d="M8 20h5" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">PR ACTIVITIES</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Blogs, Print Media, Magazines, Medical Journals</li>
-                      </ul>
-                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Online media. Social Media / Palm top devices</li>
+                      <li>Creating Festive & Event</li>
+                    </ul>
                   </div>
                 </div>
-                {/* Custom Animation for Marketing Cards */}
-                <style>{`
-                  @keyframes fade-in-up {
-                    0% { opacity: 0; transform: translateY(32px); }
-                    100% { opacity: 1; transform: none; }
-                  }
-                  .marketing-card-animate {
-                    opacity: 1 !important;
-                    transform: none !important;
-                    animation: fade-in-up 0.8s cubic-bezier(0.4,0,0.2,1) both;
-                  }
-                `}</style>
+                {/* Promotion */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
+                      <span className="font-bold text-lg">PROMOTION</span>
+                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Mass Media such as TV</li>
+                      <li>Outdoor, Print</li>
+                      <li>BTL Promotional Activities</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* Influencing */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
+                      <span className="font-bold text-lg">INFLUENCING</span>
+                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Effective planning with influencers & Approach to all relevant channels</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* PR Activities */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><path d="M8 12h8" /><path d="M8 16h8" /><path d="M8 20h5" /></svg>
+                      <span className="font-bold text-lg">PR ACTIVITIES</span>
+                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Blogs, Print Media, Magazines, Medical Journals</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
