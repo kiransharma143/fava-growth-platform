@@ -7,7 +7,7 @@ const HeroImageCarousel = () => {
     "/src/images/image-20.png",
     "/src/images/image21.png",
     "/src/images/image14.png",
-    // '/src/images/Image5.png',
+    // '/images/Image5.png',
   ];
   const [current, setCurrent] = React.useState(0);
 
@@ -562,15 +562,14 @@ const Home = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-cover bg-center flex items-center justify-center ml-10"
+            className="bg-cover bg-center flex items-center justify-center w-full min-h-[180px] sm:min-h-[220px] md:min-h-[320px] lg:min-h-[420px] max-w-full lg:ml-10"
             style={{
               backgroundImage: "url('/Vision2.jpg')", // FMCG packaging line
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
-              // minHeight: 220,
-              // maxHeight: 320,
-              // maxWidth: 340,
               width: "100%",
+              minHeight: '180px',
+              maxWidth: '100%',
             }}
           ></motion.div>
 
@@ -668,7 +667,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="bg-cover bg-center order-1 lg:order-2"
             style={{
-              backgroundImage: "url('/public/Vision.jpeg')", // Indian warehouse / logistics
+              backgroundImage: "url('/Vision.jpeg')", // Indian warehouse / logistics
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               // minHeight: 420,
