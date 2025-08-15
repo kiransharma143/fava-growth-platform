@@ -4,10 +4,10 @@ import { CheckCircle } from "lucide-react";
 // Carousel for hero section
 const HeroImageCarousel = () => {
   const images = [
-    "/src/images/image-20.png",
-    "/src/images/image21.png",
-    "/src/images/image14.png",
-    // '/images/Image5.png',
+  "/image-20.png",
+  "/image21.png",
+  "/image14.png",
+  // '/Image5.png',
   ];
   const [current, setCurrent] = React.useState(0);
 
