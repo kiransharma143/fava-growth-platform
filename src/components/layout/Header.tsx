@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedTab, setSelectedTab] = useState('home');
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -42,8 +43,11 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.id)}
-                className="font-medium transition-colors hover:text-blue-600 text-gray-600"
+                onClick={() => {
+                  scrollToSection(item.id);
+                  setSelectedTab(item.id);
+                }}
+                className={`font-medium px-3 py-1 rounded transition-colors ${selectedTab === item.id ? 'text-white bg-[#8fc64e]' : 'text-gray-600 hover:text-blue-600'}`}
               >
                 {item.name}
               </button>
@@ -69,8 +73,11 @@ const Header = () => {
                 {navItems.map((item) => (
                   <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
-                    className="font-medium text-lg transition-colors hover:text-blue-600 text-gray-600 text-left"
+                    onClick={() => {
+                      scrollToSection(item.id);
+                      setSelectedTab(item.id);
+                    }}
+                    className={`font-medium text-lg px-3 py-2 rounded transition-colors text-left ${selectedTab === item.id ? 'text-white bg-[#8fc64e]' : 'text-gray-600 hover:text-blue-600'}`}
                   >
                     {item.name}
                   </button>
