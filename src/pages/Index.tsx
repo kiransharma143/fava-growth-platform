@@ -1,5 +1,5 @@
 
-import Home from "./Home";
+import Home from "../../public/Home";
 
 const Index = () => {
   return <Home />;

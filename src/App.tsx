@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Home from "./pages/Home";
+import Home from "../public/Home";
 import NotFound from "./pages/NotFound";
 import TopContactBar from "./components/ui/TopContactbar";
 
