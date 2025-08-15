@@ -264,7 +264,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ fontFamily: 'Georgia, serif' }}>
       {/* Hero Section */} 
     <section 
       id="home" 
@@ -325,11 +325,12 @@ const Home = () => {
         <div className="absolute w-[500px] h-[500px] bg-[#5da0d5] rounded-full blur-3xl opacity-40 right-0 top-1/2 transform -translate-y-1/2" />
 
         {/* Main hero image */}
-        {/* <img
-          src="/team.jpg"
+        <img
+          src="/banner_3.png"
           alt="Fava Team"
-          className="relative z-20 w-full max-w-md lg:max-w-lg object-cover rounded-3xl shadow-2xl border-4 border-white"
-        /> */}
+          className="relative z-30 w-full max-w-lg lg:max-w-2xl object-cover rounded-3xl "
+          style={{ minHeight: 480, maxHeight: 640 }}
+        />
 
       </div>
       <style>{`
@@ -380,25 +381,18 @@ const Home = () => {
       <section 
         ref={aboutAnimation.ref as React.RefObject<HTMLElement>}
         id="about" 
-        className={`py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 w-full relative overflow-hidden transition-all duration-700 ${
+        className={`py-20 w-full relative overflow-hidden transition-all duration-700 ${
           aboutAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
       >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[#5da0d5]/20 to-[#84c23d]/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-[#84c23d]/20 to-[#5da0d5]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-green-200/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
-        </div>
-
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-12 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg tracking-tight text-center w-full">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-blue-600 drop-shadow-lg tracking-tight text-center w-full">
               ABOUT US
             </h2>
-            <div className="h-2 w-32 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] rounded-full mx-auto mb-6 shadow-lg"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <div className="h-2 w-32 bg-blue-200 rounded-full mx-auto mb-6 shadow-lg"></div>
+            <p className="text-xl text-blue-700 max-w-2xl mx-auto leading-relaxed">
               Discover our journey of excellence spanning over four decades
             </p>
           </div>
@@ -406,16 +400,24 @@ const Home = () => {
             <div className="w-full flex flex-col items-center justify-center animate-fade-in" style={{animationDelay: '0.2s'}}>
               <div className="w-full text-gray-800 text-lg md:text-xl leading-relaxed font-medium space-y-6 text-center lg:text-left px-2 md:px-8">
                 <p>
-                  <span className="font-bold">Fava Group</span> is a growing enterprise with over 40 years of multi-sector expertise across FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing. Guided by our core vision — <span className="italic">"Nurturing the Seeds"</span> — we are committed to fostering sustainable business growth through innovation, integrity, and excellence.
+                  <span className="font-bold text-blue-600">Fava Group</span> is a growing enterprise with over 40 years of multi-sector expertise across FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing. Guided by our core vision — <span className="italic text-green-600">"Nurturing the Seeds"</span> — we are committed to fostering sustainable business growth through innovation, integrity, and excellence.
                 </p>
                 <p>
                   With deep-rooted expertise in the FMCG space and a proven track record, we have built one of the most extensive multi-brand distribution networks in India. Our operations span West, North, and South India, where our sales strategists and operational experts leverage regional and cultural insights to deliver impactful market penetration.
                 </p>
-                {/* ...removed BDaaS paragraph and bullet list as requested... */}
                 <p>
-                  By offering end-to-end business solutions under one roof, Fava Group empowers brands to enter, expand, and thrive in competitive markets — making us the trusted partner for sustainable growth.
+                  By offering end-to-end business solutions under one roof, <span className="text-blue-600 font-bold">Fava Group</span> empowers brands to enter, expand, and thrive in competitive markets — making us the trusted partner for sustainable growth.
                 </p>
               </div>
+            </div>
+            {/* About Us Image */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0 animate-fade-in" style={{animationDelay: '0.3s'}}>
+              <img
+                src="/aboutus.jpg"
+                alt="About Us"
+                className="w-full max-w-md lg:max-w-lg rounded-3xl shadow-2xl border-4 border-white object-cover"
+                style={{ minHeight: 320, maxHeight: 420 }}
+              />
             </div>
           </div>
         </div>
@@ -431,6 +433,33 @@ const Home = () => {
         <div className="container mx-auto px-4 flex flex-col items-center justify-center gap-10 relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg tracking-tight text-center w-full">Vision & Mission</h2>
           <div className="flex flex-col md:flex-row gap-8 w-full max-w-4xl items-stretch justify-center">
+            {/* Vision Card */}
+            <div className="flex-1 flex flex-col items-center">
+              <div className="relative bg-white rounded-2xl shadow-xl border-t-4 border-[#84c23d] px-6 pt-10 pb-6 flex flex-col items-center w-full h-full">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#84c23d] flex items-center justify-center rounded-full shadow-lg">
+                  {/* Vision Icon: Eye */}
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#84c23d" opacity="0.12"/><ellipse cx="18" cy="18" rx="10" ry="6" fill="#fff"/><ellipse cx="18" cy="18" rx="4" ry="4" fill="#84c23d"/><circle cx="18" cy="18" r="2" fill="#fff"/></svg>
+                </div>
+                <div className="flex flex-col items-center mt-8">
+                  <span className="text-lg font-bold text-[#84c23d] mb-2">Vision</span>
+                  <div className="text-gray-700 text-sm text-center mb-2 space-y-1 animate-fade-in">
+                    <span className="block font-semibold text-[#5da0d5]">Our objective is to establish <span className="text-[#84c23d] font-bold">Fava Glocal</span> as a leading solutions provider for start-ups and emerging brands in the fast-moving consumer goods (FMCG) sector,</span>
+                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.1s'}}>develop sustainable distribution network across India, accompanied with highly skilled and dedicated sales force.</span>
+                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.2s'}}>Deployment of innovative digital marketing strategies and pursuing discontinuous growth strategies</span>
+                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.3s'}}>in the space of processed foods, branded commodities, and non-food categories.</span>
+                  </div>
+      <style>{`
+        @keyframes fade-in {
+          0% { opacity: 0; transform: translateY(16px); }
+          100% { opacity: 1; transform: none; }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
+        }
+      `}</style>
+                </div>
+              </div>
+            </div>
             {/* Mission Card */}
             <div className="flex-1 flex flex-col items-center">
               <div className="relative bg-white rounded-2xl shadow-xl border-t-4 border-[#5da0d5] px-6 pt-10 pb-6 flex flex-col items-center w-full h-full">
@@ -456,33 +485,6 @@ const Home = () => {
                     </ul>
                     <span className="block italic text-[#5da0d5] font-bold mt-2">"Nurturing the Seeds of Growth."</span>
                   </div>
-                </div>
-              </div>
-            </div>
-            {/* Vision Card */}
-            <div className="flex-1 flex flex-col items-center">
-              <div className="relative bg-white rounded-2xl shadow-xl border-t-4 border-[#84c23d] px-6 pt-10 pb-6 flex flex-col items-center w-full h-full">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#84c23d] flex items-center justify-center rounded-full shadow-lg">
-                  {/* Vision Icon: Eye */}
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#84c23d" opacity="0.12"/><ellipse cx="18" cy="18" rx="10" ry="6" fill="#fff"/><ellipse cx="18" cy="18" rx="4" ry="4" fill="#84c23d"/><circle cx="18" cy="18" r="2" fill="#fff"/></svg>
-                </div>
-                <div className="flex flex-col items-center mt-8">
-                  <span className="text-lg font-bold text-[#84c23d] mb-2">Vision</span>
-                  <div className="text-gray-700 text-sm text-center mb-2 space-y-1 animate-fade-in">
-                    <span className="block font-semibold text-[#5da0d5]">Our objective is to establish <span className="text-[#84c23d] font-bold">Fava Glocal</span> as a leading solutions provider for start-ups and emerging brands in the fast-moving consumer goods (FMCG) sector,</span>
-                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.1s'}}>develop sustainable distribution network across India, accompanied with highly skilled and dedicated sales force.</span>
-                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.2s'}}>Deployment of innovative digital marketing strategies and pursuing discontinuous growth strategies</span>
-                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.3s'}}>in the space of processed foods, branded commodities, and non-food categories.</span>
-                  </div>
-      <style>{`
-        @keyframes fade-in {
-          0% { opacity: 0; transform: translateY(16px); }
-          100% { opacity: 1; transform: none; }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
-        }
-      `}</style>
                 </div>
               </div>
             </div>
@@ -573,7 +575,7 @@ const Home = () => {
             {mainServices.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-blue-200 border border-blue-100 p-8 flex flex-col items-center text-center transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in"
+                className={`group relative bg-white rounded-3xl shadow-2xl hover:shadow-blue-200 border border-blue-100 p-8 flex flex-col items-center text-center transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in animate-bounce-slow ring-4 ring-[#84c23d]/30`}
                 style={{animationDelay: `${0.1 * index}s`}}
               >
                 <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#5da0d5] to-[#84c23d] shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -592,6 +594,16 @@ const Home = () => {
                 </div>
               </div>
             ))}
+        {/* Custom Animation for BDaaS Card */}
+        <style>{`
+          @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+          }
+          .animate-bounce-slow {
+            animation: bounce-slow 2.2s infinite;
+          }
+        `}</style>
           </div>
         </div>
       </section>
@@ -739,8 +751,8 @@ const Home = () => {
           </div>
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Card with Steps (No Animation) */}
-            <div className="relative">
-              <div className="bg-white/90 rounded-3xl shadow-2xl border-2 border-blue-100 p-10 flex flex-col gap-8 relative overflow-hidden">
+            <div className="relative h-full flex flex-col">
+              <div className="bg-white/90 rounded-3xl shadow-2xl border-2 border-blue-100 p-10 flex flex-col gap-8 relative overflow-hidden h-full min-h-[420px]">
                 {/* Decorative Blobs (static, no animation) */}
                 <div className="absolute -top-10 -left-10 w-32 h-32 bg-[cornflowerblue] opacity-20 rounded-full blur-2xl z-0" />
                 <div className="absolute -bottom-10 right-0 w-32 h-32 bg-[#84c23d] opacity-20 rounded-full blur-2xl z-0" />
@@ -776,68 +788,60 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            {/* Right: Animated Image Card */}
-            <div className="relative animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <div className="flex items-center justify-center w-full h-full min-h-[420px]">
-                <div className="w-full max-w-xl">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Digital Marketing */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.1s'}}>
-                      <div className="mb-4">{/* PointerIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m20 18-6-6h-3.8l-7-7" /><path d="M14.5 14.5 10 19l-7-7" /><path d="M19 19-3-3" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">DIGITAL MARKETING</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Online media. Social Media / Palm top devices</li>
-                        <li>Creating Festive & Event</li>
-                      </ul>
+            {/* Right: 2x2 Marketing Cards Grid, full height */}
+            <div className="h-full flex flex-col">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full min-h-[420px]">
+                {/* Digital Marketing */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M2 16l6-6 4 4 8-8" /></svg>
+                      <span className="font-bold text-lg">DIGITAL MARKETING</span>
                     </div>
-                    {/* Promotion */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.2s'}}>
-                      <div className="mb-4">{/* MegaphoneIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">PROMOTION</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Mass Media such as TV</li>
-                        <li>Outdoor, Print</li>
-                        <li>BTL Promotional Activities</li>
-                      </ul>
-                    </div>
-                    {/* Influencing */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.3s'}}>
-                      <div className="mb-4">{/* MegaphoneIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">INFLUENCING</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Effective planning with influencers & Approach to all relevant channels</li>
-                      </ul>
-                    </div>
-                    {/* PR Activities */}
-                    <div className={`relative p-6 rounded-2xl bg-gradient-to-br from-[#5da0d5] to-[#84c23d] text-white shadow-xl flex flex-col items-start transition-all duration-700 ${aboutAnimation.isVisible ? 'marketing-card-animate' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.4s'}}>
-                      <div className="mb-4">{/* DocumentIcon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><path d="M8 12h8" /><path d="M8 16h8" /><path d="M8 20h5" /></svg>
-                      </div>
-                      <div className="font-bold text-lg mb-2">PR ACTIVITIES</div>
-                      <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>Blogs, Print Media, Magazines, Medical Journals</li>
-                      </ul>
-                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Online media. Social Media / Palm top devices</li>
+                      <li>Creating Festive & Event</li>
+                    </ul>
                   </div>
                 </div>
-                {/* Custom Animation for Marketing Cards */}
-                <style>{`
-                  @keyframes fade-in-up {
-                    0% { opacity: 0; transform: translateY(32px); }
-                    100% { opacity: 1; transform: none; }
-                  }
-                  .marketing-card-animate {
-                    opacity: 1 !important;
-                    transform: none !important;
-                    animation: fade-in-up 0.8s cubic-bezier(0.4,0,0.2,1) both;
-                  }
-                `}</style>
+                {/* Promotion */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
+                      <span className="font-bold text-lg">PROMOTION</span>
+                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Mass Media such as TV</li>
+                      <li>Outdoor, Print</li>
+                      <li>BTL Promotional Activities</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* Influencing */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M3 11h3.5a2 2 0 0 1 0 4H3" /><path d="m14 12-3.3-3.3A2 2 0 0 1 8 10v4c0 .87.5 1.63 1.3 2.07L14 12Z" /><path d="M19 12h2" /><path d="M16 3.5c1.47 2.05 2 4.67 2 6.5s-1.47 4.45-2 6.5" /></svg>
+                      <span className="font-bold text-lg">INFLUENCING</span>
+                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Effective planning with influencers & Approach to all relevant channels</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* PR Activities */}
+                <div className="rounded-2xl shadow-lg bg-gradient-to-br from-[#5da0d5] to-[#84c23d] p-6 text-white flex flex-col justify-between h-full min-h-[140px]">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><path d="M8 12h8" /><path d="M8 16h8" /><path d="M8 20h5" /></svg>
+                      <span className="font-bold text-lg">PR ACTIVITIES</span>
+                    </div>
+                    <ul className="list-disc list-inside ml-2 text-sm">
+                      <li>Blogs, Print Media, Magazines, Medical Journals</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
