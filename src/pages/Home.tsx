@@ -325,11 +325,11 @@ const Home = () => {
         <div className="absolute w-[500px] h-[500px] bg-[#5da0d5] rounded-full blur-3xl opacity-40 right-0 top-1/2 transform -translate-y-1/2" />
 
         {/* Main hero image */}
-        {/* <img
+        <img
           src="/team.jpg"
           alt="Fava Team"
           className="relative z-20 w-full max-w-md lg:max-w-lg object-cover rounded-3xl shadow-2xl border-4 border-white"
-        /> */}
+        />
 
       </div>
       <style>{`
@@ -380,25 +380,18 @@ const Home = () => {
       <section 
         ref={aboutAnimation.ref as React.RefObject<HTMLElement>}
         id="about" 
-        className={`py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 w-full relative overflow-hidden transition-all duration-700 ${
+        className={`py-20 w-full relative overflow-hidden transition-all duration-700 ${
           aboutAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
       >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[#5da0d5]/20 to-[#84c23d]/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-[#84c23d]/20 to-[#5da0d5]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-green-200/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
-        </div>
-
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-12 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg tracking-tight text-center w-full">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-blue-600 drop-shadow-lg tracking-tight text-center w-full">
               ABOUT US
             </h2>
-            <div className="h-2 w-32 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] rounded-full mx-auto mb-6 shadow-lg"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <div className="h-2 w-32 bg-blue-200 rounded-full mx-auto mb-6 shadow-lg"></div>
+            <p className="text-xl text-blue-700 max-w-2xl mx-auto leading-relaxed">
               Discover our journey of excellence spanning over four decades
             </p>
           </div>
@@ -406,14 +399,13 @@ const Home = () => {
             <div className="w-full flex flex-col items-center justify-center animate-fade-in" style={{animationDelay: '0.2s'}}>
               <div className="w-full text-gray-800 text-lg md:text-xl leading-relaxed font-medium space-y-6 text-center lg:text-left px-2 md:px-8">
                 <p>
-                  <span className="font-bold">Fava Group</span> is a growing enterprise with over 40 years of multi-sector expertise across FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing. Guided by our core vision — <span className="italic">"Nurturing the Seeds"</span> — we are committed to fostering sustainable business growth through innovation, integrity, and excellence.
+                  <span className="font-bold text-blue-600">Fava Group</span> is a growing enterprise with over 40 years of multi-sector expertise across FMCG, Finance, Export, Warehousing, Distribution, Manpower, and Marketing. Guided by our core vision — <span className="italic text-green-600">"Nurturing the Seeds"</span> — we are committed to fostering sustainable business growth through innovation, integrity, and excellence.
                 </p>
                 <p>
                   With deep-rooted expertise in the FMCG space and a proven track record, we have built one of the most extensive multi-brand distribution networks in India. Our operations span West, North, and South India, where our sales strategists and operational experts leverage regional and cultural insights to deliver impactful market penetration.
                 </p>
-                {/* ...removed BDaaS paragraph and bullet list as requested... */}
                 <p>
-                  By offering end-to-end business solutions under one roof, Fava Group empowers brands to enter, expand, and thrive in competitive markets — making us the trusted partner for sustainable growth.
+                  By offering end-to-end business solutions under one roof, <span className="text-blue-600 font-bold">Fava Group</span> empowers brands to enter, expand, and thrive in competitive markets — making us the trusted partner for sustainable growth.
                 </p>
               </div>
             </div>
@@ -431,6 +423,33 @@ const Home = () => {
         <div className="container mx-auto px-4 flex flex-col items-center justify-center gap-10 relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 bg-gradient-to-r from-[#5da0d5] via-[#84c23d] to-[#5da0d5] bg-clip-text text-transparent drop-shadow-lg tracking-tight text-center w-full">Vision & Mission</h2>
           <div className="flex flex-col md:flex-row gap-8 w-full max-w-4xl items-stretch justify-center">
+            {/* Vision Card */}
+            <div className="flex-1 flex flex-col items-center">
+              <div className="relative bg-white rounded-2xl shadow-xl border-t-4 border-[#84c23d] px-6 pt-10 pb-6 flex flex-col items-center w-full h-full">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#84c23d] flex items-center justify-center rounded-full shadow-lg">
+                  {/* Vision Icon: Eye */}
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#84c23d" opacity="0.12"/><ellipse cx="18" cy="18" rx="10" ry="6" fill="#fff"/><ellipse cx="18" cy="18" rx="4" ry="4" fill="#84c23d"/><circle cx="18" cy="18" r="2" fill="#fff"/></svg>
+                </div>
+                <div className="flex flex-col items-center mt-8">
+                  <span className="text-lg font-bold text-[#84c23d] mb-2">Vision</span>
+                  <div className="text-gray-700 text-sm text-center mb-2 space-y-1 animate-fade-in">
+                    <span className="block font-semibold text-[#5da0d5]">Our objective is to establish <span className="text-[#84c23d] font-bold">Fava Glocal</span> as a leading solutions provider for start-ups and emerging brands in the fast-moving consumer goods (FMCG) sector,</span>
+                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.1s'}}>develop sustainable distribution network across India, accompanied with highly skilled and dedicated sales force.</span>
+                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.2s'}}>Deployment of innovative digital marketing strategies and pursuing discontinuous growth strategies</span>
+                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.3s'}}>in the space of processed foods, branded commodities, and non-food categories.</span>
+                  </div>
+      <style>{`
+        @keyframes fade-in {
+          0% { opacity: 0; transform: translateY(16px); }
+          100% { opacity: 1; transform: none; }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
+        }
+      `}</style>
+                </div>
+              </div>
+            </div>
             {/* Mission Card */}
             <div className="flex-1 flex flex-col items-center">
               <div className="relative bg-white rounded-2xl shadow-xl border-t-4 border-[#5da0d5] px-6 pt-10 pb-6 flex flex-col items-center w-full h-full">
@@ -456,33 +475,6 @@ const Home = () => {
                     </ul>
                     <span className="block italic text-[#5da0d5] font-bold mt-2">"Nurturing the Seeds of Growth."</span>
                   </div>
-                </div>
-              </div>
-            </div>
-            {/* Vision Card */}
-            <div className="flex-1 flex flex-col items-center">
-              <div className="relative bg-white rounded-2xl shadow-xl border-t-4 border-[#84c23d] px-6 pt-10 pb-6 flex flex-col items-center w-full h-full">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#84c23d] flex items-center justify-center rounded-full shadow-lg">
-                  {/* Vision Icon: Eye */}
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#84c23d" opacity="0.12"/><ellipse cx="18" cy="18" rx="10" ry="6" fill="#fff"/><ellipse cx="18" cy="18" rx="4" ry="4" fill="#84c23d"/><circle cx="18" cy="18" r="2" fill="#fff"/></svg>
-                </div>
-                <div className="flex flex-col items-center mt-8">
-                  <span className="text-lg font-bold text-[#84c23d] mb-2">Vision</span>
-                  <div className="text-gray-700 text-sm text-center mb-2 space-y-1 animate-fade-in">
-                    <span className="block font-semibold text-[#5da0d5]">Our objective is to establish <span className="text-[#84c23d] font-bold">Fava Glocal</span> as a leading solutions provider for start-ups and emerging brands in the fast-moving consumer goods (FMCG) sector,</span>
-                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.1s'}}>develop sustainable distribution network across India, accompanied with highly skilled and dedicated sales force.</span>
-                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.2s'}}>Deployment of innovative digital marketing strategies and pursuing discontinuous growth strategies</span>
-                    <span className="block font-semibold text-[#5da0d5] animate-fade-in" style={{animationDelay: '0.3s'}}>in the space of processed foods, branded commodities, and non-food categories.</span>
-                  </div>
-      <style>{`
-        @keyframes fade-in {
-          0% { opacity: 0; transform: translateY(16px); }
-          100% { opacity: 1; transform: none; }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
-        }
-      `}</style>
                 </div>
               </div>
             </div>
@@ -573,7 +565,7 @@ const Home = () => {
             {mainServices.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-blue-200 border border-blue-100 p-8 flex flex-col items-center text-center transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in"
+                className={`group relative bg-white rounded-3xl shadow-2xl hover:shadow-blue-200 border border-blue-100 p-8 flex flex-col items-center text-center transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in animate-bounce-slow ring-4 ring-[#84c23d]/30`}
                 style={{animationDelay: `${0.1 * index}s`}}
               >
                 <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#5da0d5] to-[#84c23d] shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -592,6 +584,16 @@ const Home = () => {
                 </div>
               </div>
             ))}
+        {/* Custom Animation for BDaaS Card */}
+        <style>{`
+          @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+          }
+          .animate-bounce-slow {
+            animation: bounce-slow 2.2s infinite;
+          }
+        `}</style>
           </div>
         </div>
       </section>
