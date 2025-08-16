@@ -61,12 +61,12 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+  <div className="min-h-screen bg-white font-sans">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+  <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20 font-sans">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Our Services</h1>
+            <h1 className="text-5xl font-bold font-poppins mb-6">Our Services</h1>
             <p className="text-xl text-blue-100">
               Comprehensive Digital Solutions Tailored For Your Success
             </p>
@@ -78,7 +78,7 @@ const Services = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold font-poppins text-gray-800 mb-4">
               Our Core Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

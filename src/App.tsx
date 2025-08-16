@@ -8,6 +8,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import TopContactBar from "./components/ui/TopContactbar";
 
 const queryClient = new QueryClient();
 
@@ -18,11 +19,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
+          <TopContactBar />
+          
           <Header />
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="*" element={<Home />} />
             </Routes>
           </main>
           <Footer />
